@@ -1,0 +1,237 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?
+    family=Cinzel:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&
+    family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&
+    family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&
+    display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" 
+    rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'app/css/index.css' %}">
+    <link rel="icon" href="{% static 'app/images/logo.jpeg' %}" type="image/png">
+    <title>NeoGrammer</title>
+</head>
+<body>
+    <!-- Start Header -->
+    <header>
+        <div class="container">
+            <div class="burger">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="masthead">
+                <ul class="menu menu-1">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+                <div class="logo">
+                    <img id="scroll-logo" src="{% static 'app/images/logo.jpg' %}" alt="">
+                </div>
+                <ul class="menu menu-2">
+                    <li><a href="#">Explore</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            {% if user.is_authenticated %}
+            <ul>
+                <li><a href="#">MyAccount</a></li>
+            </ul>
+            {% else %}
+            <div class="login">
+                <a href="#">Sign In/Up</a>
+            </div>
+            {% endif %}
+        </div>
+    </header>
+    <!-- End Header -->
+    
+    <!-- Start Landing -->
+    <section class="landing">
+        <div class="container">
+            <div class="text">
+                <h1>Write Smarter, Instantly.</h1>
+                <h3>AI-Powered Autocorrect That Understands Context</h3>
+                <p>Tired of embarrassing typos and confusing sentences? Our intelligent autocorrect model goes beyond spellcheck to enhance clarity, grammar, and tone — all in real-time. Whether you're messaging, blogging, or writing emails, we help you say it better.</p>
+                <button class="cta-button">Try it now</button>
+            </div>
+            <div class="image">
+                <img src="{% static 'app/images/pic2.jpg' %}" alt="">
+            </div>
+        </div>
+    </section>
+    <!-- End Landing -->
+    
+    <!-- Start How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="title">
+                <h1>Fix Typos and Grammar Mistakes Effortlessly </h1>
+                <h1>Just Enter Your Text.</h1>
+            </div>
+            <div class="first-step">
+                <div class="text">
+                    <h1 class="digit">1.</h1>
+                    <h1 class="header"><strong>Spelling Corrections:</strong> Instantly fix typos and spelling mistakes to keep your writing sharp and clean.</h1>
+                </div>
+                <div class="image">
+                    <img src="{% static 'app/images/reco.png' %}" alt="">
+                </div>
+            </div>
+            <div class="second-step">
+                <div class="image">
+                    <img class="pic3" src="{% static 'app/images/brain.jpg' %}" alt="">
+                </div>
+                <div class="text">
+                    <h1 class="digit">2.</h1>
+                    <h2 class="header"><strong>Basic Grammar Fixes:</strong> Automatically correct common grammar and punctuation errors with a single click.</h2>
+                </div>
+            </div>
+            <div class="third-step">
+                <div class="text">
+                    <h1 class="digit">3.</h1>
+                    <h1 class="header"><strong>Quick Integration:</strong> Just input a sentence — our model returns the corrected version. No setup, no fuss.</h1>
+                </div>
+                <div class="image">
+                    <img src="{% static 'app/images/AI.jpg' %}" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="ending-text">
+            <h1>Whether it's a typo or a missed comma</h1>
+            <h1>we've got your sentences covered.</h1>
+        </div>
+    </section>
+    <!-- End How It Works -->
+
+    <!-- Start Reviews -->
+    <section class="reviews">
+        <div class="container">
+            <div class="title">
+                <svg class="shape-2" width="36" height="76" viewBox="0 0 36 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M25.2704 76C23.7092 75.9993 22.167 75.6558 20.7516 74.9935C19.3362 74.3312 18.0818 73.366 17.076 72.1654C19.2577 70.4733 22.0067 69.697 24.7456 69.9998C27.4845 70.3025 30.0002 71.6607 31.7641 73.7891C29.8958 75.2279 27.6066 76.0052 25.2532 76M29.9775 63.4773C29.9747 61.1167 30.7478 58.8214 32.1764 56.9482C34.2847 58.7267 35.6306 61.2534 35.9345 64.0036C36.2384 66.7537 35.477 69.5159 33.8084 71.7163C32.6112 70.7067 31.648 69.4462 30.9863 68.023C30.3245 66.5998 29.9802 65.0483 29.9775 63.4773ZM14.0353 66.4827C12.523 66.0764 11.1177 65.3415 9.9185 64.3298C8.71933 63.3181 7.7555 62.0542 7.09495 60.6273C9.63966 59.5732 12.4907 59.547 15.0541 60.5542C17.6176 61.5613 19.6956 63.5241 20.8554 66.0336C18.7595 66.8972 16.3888 67.1045 14.0353 66.4827ZM21.8174 55.6009C22.4248 53.328 23.7589 51.319 25.614 49.8836C27.1894 52.1506 27.8363 54.9403 27.4205 57.674C27.0046 60.4078 25.558 62.8756 23.3807 64.5654C22.4845 63.2768 21.8801 61.8063 21.6101 60.2575C21.34 58.7087 21.4107 57.1192 21.8174 55.6009ZM3.89965 53.6663C2.69431 52.6671 1.72076 51.415 1.04714 49.9978C0.373535 48.5806 0.0161463 47.0325 0 45.4618C2.75454 45.5555 5.36615 46.7174 7.28761 48.704C9.20907 50.6907 10.2913 53.348 10.3074 56.1191C7.96128 56.0327 5.70897 55.1706 3.89965 53.6663ZM15.4612 47.0336C17.0073 45.1336 19.0859 43.9245 21.302 43.4063C21.8021 46.1301 21.2383 48.9429 19.728 51.2593C18.2177 53.5757 15.8772 55.2174 13.1935 55.8427C12.9086 54.297 12.9639 52.7072 13.3557 51.1853C13.7475 49.6634 14.4662 48.2463 15.4612 47.0336ZM2.06149 38.5182C1.15432 37.2379 0.536632 35.7737 0.251742 34.2281C-0.0331486 32.6825 0.0216507 31.093 0.412298 29.5709C3.0483 30.3777 5.27158 32.1787 6.61653 34.5967C7.96147 37.0147 8.32376 39.8622 7.62751 42.5427C5.3823 41.8535 3.4259 40.4389 2.06149 38.5182ZM14.9458 35.1154C16.8564 33.7457 19.163 33.0475 21.5082 33.1291C21.2846 35.8853 20.0143 38.4492 17.9607 40.2888C15.9072 42.1284 13.2281 43.1026 10.4792 43.0091C10.6052 41.4428 11.0702 39.9232 11.8418 38.5566C12.6133 37.1901 13.6727 36.0097 14.9458 35.0982M3.64196 23.1454C3.18289 21.6417 3.05727 20.0551 3.27394 18.4974C3.49061 16.9396 4.04431 15.4485 4.89603 14.1291C7.13904 15.735 8.67759 18.1507 9.18987 20.871C9.70216 23.5912 9.14849 26.4053 7.64468 28.7245C5.73834 27.3562 4.33198 25.396 3.64196 23.1454ZM16.9386 24.0091C19.1787 23.323 21.5809 23.3958 23.7758 24.2164C22.698 26.7615 20.6868 28.7915 18.1597 29.8851C15.6326 30.9786 12.7836 31.0517 10.2044 30.0891C10.82 28.6464 11.7416 27.3563 12.9048 26.3091C14.068 25.2619 15.4447 24.4828 16.9386 24.0264M10.17 10.8645C9.77489 7.58272 10.8915 4.47363 12.9702 2.22818C14.8962 4.20533 15.989 6.85348 16.021 9.62079C16.053 12.3881 15.0217 15.0611 13.142 17.0827C11.4973 15.3956 10.4526 13.2098 10.17 10.8645ZM23.1058 14.0773C25.4332 13.7978 27.7873 14.2955 29.8057 15.4936C28.2971 17.8082 25.9609 19.4507 23.281 20.0809C20.601 20.7112 17.7827 20.2808 15.4096 18.8791C16.2662 17.5624 17.399 16.4503 18.7286 15.6207C20.0581 14.7912 21.5522 14.2644 23.1058 14.0773ZM24.7722 2.31454C26.608 0.85177 28.8723 0.0382756 31.2144 0C31.1307 2.76708 29.9897 5.3953 28.0284 7.3383C26.0672 9.28129 23.4366 10.3896 20.6836 10.4327C20.7339 8.86141 21.1261 7.32027 21.8325 5.91772C22.5388 4.51517 23.5423 3.28527 24.7722 2.31454Z" fill="#111111"></path>
+                </svg>
+                <h1>Rating & Reviews</h1>
+                <svg class="shape-1" width="36" height="76" viewBox="0 0 36 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M25.2704 76C23.7092 75.9993 22.167 75.6558 20.7516 74.9935C19.3362 74.3312 18.0818 73.366 17.076 72.1654C19.2577 70.4733 22.0067 69.697 24.7456 69.9998C27.4845 70.3025 30.0002 71.6607 31.7641 73.7891C29.8958 75.2279 27.6066 76.0052 25.2532 76M29.9775 63.4773C29.9747 61.1167 30.7478 58.8214 32.1764 56.9482C34.2847 58.7267 35.6306 61.2534 35.9345 64.0036C36.2384 66.7537 35.477 69.5159 33.8084 71.7163C32.6112 70.7067 31.648 69.4462 30.9863 68.023C30.3245 66.5998 29.9802 65.0483 29.9775 63.4773ZM14.0353 66.4827C12.523 66.0764 11.1177 65.3415 9.9185 64.3298C8.71933 63.3181 7.7555 62.0542 7.09495 60.6273C9.63966 59.5732 12.4907 59.547 15.0541 60.5542C17.6176 61.5613 19.6956 63.5241 20.8554 66.0336C18.7595 66.8972 16.3888 67.1045 14.0353 66.4827ZM21.8174 55.6009C22.4248 53.328 23.7589 51.319 25.614 49.8836C27.1894 52.1506 27.8363 54.9403 27.4205 57.674C27.0046 60.4078 25.558 62.8756 23.3807 64.5654C22.4845 63.2768 21.8801 61.8063 21.6101 60.2575C21.34 58.7087 21.4107 57.1192 21.8174 55.6009ZM3.89965 53.6663C2.69431 52.6671 1.72076 51.415 1.04714 49.9978C0.373535 48.5806 0.0161463 47.0325 0 45.4618C2.75454 45.5555 5.36615 46.7174 7.28761 48.704C9.20907 50.6907 10.2913 53.348 10.3074 56.1191C7.96128 56.0327 5.70897 55.1706 3.89965 53.6663ZM15.4612 47.0336C17.0073 45.1336 19.0859 43.9245 21.302 43.4063C21.8021 46.1301 21.2383 48.9429 19.728 51.2593C18.2177 53.5757 15.8772 55.2174 13.1935 55.8427C12.9086 54.297 12.9639 52.7072 13.3557 51.1853C13.7475 49.6634 14.4662 48.2463 15.4612 47.0336ZM2.06149 38.5182C1.15432 37.2379 0.536632 35.7737 0.251742 34.2281C-0.0331486 32.6825 0.0216507 31.093 0.412298 29.5709C3.0483 30.3777 5.27158 32.1787 6.61653 34.5967C7.96147 37.0147 8.32376 39.8622 7.62751 42.5427C5.3823 41.8535 3.4259 40.4389 2.06149 38.5182ZM14.9458 35.1154C16.8564 33.7457 19.163 33.0475 21.5082 33.1291C21.2846 35.8853 20.0143 38.4492 17.9607 40.2888C15.9072 42.1284 13.2281 43.1026 10.4792 43.0091C10.6052 41.4428 11.0702 39.9232 11.8418 38.5566C12.6133 37.1901 13.6727 36.0097 14.9458 35.0982M3.64196 23.1454C3.18289 21.6417 3.05727 20.0551 3.27394 18.4974C3.49061 16.9396 4.04431 15.4485 4.89603 14.1291C7.13904 15.735 8.67759 18.1507 9.18987 20.871C9.70216 23.5912 9.14849 26.4053 7.64468 28.7245C5.73834 27.3562 4.33198 25.396 3.64196 23.1454ZM16.9386 24.0091C19.1787 23.323 21.5809 23.3958 23.7758 24.2164C22.698 26.7615 20.6868 28.7915 18.1597 29.8851C15.6326 30.9786 12.7836 31.0517 10.2044 30.0891C10.82 28.6464 11.7416 27.3563 12.9048 26.3091C14.068 25.2619 15.4447 24.4828 16.9386 24.0264M10.17 10.8645C9.77489 7.58272 10.8915 4.47363 12.9702 2.22818C14.8962 4.20533 15.989 6.85348 16.021 9.62079C16.053 12.3881 15.0217 15.0611 13.142 17.0827C11.4973 15.3956 10.4526 13.2098 10.17 10.8645ZM23.1058 14.0773C25.4332 13.7978 27.7873 14.2955 29.8057 15.4936C28.2971 17.8082 25.9609 19.4507 23.281 20.0809C20.601 20.7112 17.7827 20.2808 15.4096 18.8791C16.2662 17.5624 17.399 16.4503 18.7286 15.6207C20.0581 14.7912 21.5522 14.2644 23.1058 14.0773ZM24.7722 2.31454C26.608 0.85177 28.8723 0.0382756 31.2144 0C31.1307 2.76708 29.9897 5.3953 28.0284 7.3383C26.0672 9.28129 23.4366 10.3896 20.6836 10.4327C20.7339 8.86141 21.1261 7.32027 21.8325 5.91772C22.5388 4.51517 23.5423 3.28527 24.7722 2.31454Z" fill="#111111"></path>
+                </svg>
+            </div>
+            <div class="comment">
+                <h1>Voices of confidence from our community</h1>
+            </div>
+            <div class="boxes">
+                <div class="box">
+                    <div class="rate">
+                        <i class="filled fas fa-star"></i>
+                        <i class="filled fas fa-star"></i>
+                        <i class="filled fas fa-star"></i>
+                        <i class="filled fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores et reiciendis voluptatum, amet est natus quaerat</p>
+                    <h3>Yasser Aamoud</h3>
+                </div>
+                <div class="box">
+                    <div class="rate">
+                        <i class="filled fas fa-star"></i>
+                        <i class="filled fas fa-star"></i>
+                        <i class="filled fas fa-star"></i>
+                        <i class="filled fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores et reiciendis voluptatum, amet est natus quaerat</p>
+                    <h3>Yasser Aamoud</h3>
+                </div>
+                <div class="box">
+                    <div class="rate">
+                        <i class="filled fas fa-star"></i>
+                        <i class="filled fas fa-star"></i>
+                        <i class="filled fas fa-star"></i>
+                        <i class="filled fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores et reiciendis voluptatum, amet est natus quaerat</p>
+                    <h3>Yasser Aamoud</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Reviews -->
+
+    <!-- Start Testing -->
+    <section id="testing" class="testing">
+        <h1 class="header">Try our models for free</h1>
+        <div class="container">
+            <form action="" method="post">
+                {% csrf_token %}
+                <div class="buttons">
+                    <div class="inputbox">
+                        <input type="radio" id="T5" name="model" value="T5">
+                        <label for="T5">T5</label>
+                    </div>
+                    <div class="inputbox">
+                        <input type="radio" id="Bart" name="model" value="Bart">
+                        <label for="Bart">BART</label>
+                    </div>
+                </div>
+                <textarea name="prompt" id="prompt" placeholder="Put your sentence">{% if prompt %}{{ prompt }}{% endif %}</textarea>
+                <textarea name="correction" id="correction" readonly>{% if correction %}{{ correction }}{% endif %}</textarea>
+                <input class="bouton" type="submit" value="Correct">
+            </form>
+        </div>
+    </section>
+    <!-- End testing -->
+
+    <!-- Start Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-about">
+                <h3>NeoGrammer</h3>
+                <img src="{% static 'app/images/logo.jpg' %}" alt="">
+            </div>
+
+            <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Explore</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            </div>
+
+            <div class="footer-contact">
+            <h3>Contact Us</h3>
+            <p>
+                <i class="fas fa-map-marker-alt"></i> INPT, AlIrfane, Rabat,
+                Maroc
+            </p>
+            <p><i class="fas fa-phone-alt"></i> +1 234 567 890</p>
+            <p><i class="fas fa-envelope"></i> contact@DressMe.com</p>
+            </div>
+
+            <div class="footer-social">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 DressMe. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <!-- End Footer -->
+    <script src="{% static 'app/js/index.js' %}"></script>
+    <script>
+        window.location.hash = "testing";
+    </script>
+
+</body>
+</html>
