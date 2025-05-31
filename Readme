@@ -1,1 +1,3 @@
 This project focuses on Grammatical Error Correction (GEC), where we fine-tune two models — BERT and T5 — to automatically correct sentences. These models are deployed within this small Django app, and you can find them in the designated folder.
+
+Place the model folders directly inside the app directory.

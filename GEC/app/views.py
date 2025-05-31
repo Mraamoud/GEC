@@ -1,9 +1,10 @@
 from django.shortcuts import render
 import torch
 from transformers import BartForConditionalGeneration, BartTokenizer, T5ForConditionalGeneration, T5Tokenizer
-
-model_path_bart = "/home/yasser/Documents/text_mining/text_mining/app/bart-autocorrector-final"
-model_path_t5 = "/home/yasser/Documents/text_mining/text_mining/app/final-model"
+from django.conf import settings
+import os
+model_path_bart = os.path.join(settings.BASE_DIR, "app", "bart-autocorrector-final")
+model_path_t5 = os.path.join(settings.BASE_DIR, "app", "final-model")
 
 model_bart = BartForConditionalGeneration.from_pretrained(model_path_bart)
 tokenizer_bart = BartTokenizer.from_pretrained(model_path_bart)
