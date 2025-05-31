@@ -1,0 +1,6 @@
+django
+datasets
+transformers 
+torch
+sentencepiece
+protobuf
